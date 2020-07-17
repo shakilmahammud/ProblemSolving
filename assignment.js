@@ -14,7 +14,7 @@ function feetToMile(feet){
     }
     return mile;
 }
-var feetToMileResult=feetToMile(0);
+var feetToMileResult=feetToMile(1);
 
 console.log("Your feet: =",feetToMileResult,"Mile.");
 
@@ -29,9 +29,13 @@ function woodCalculator(chair,table,bed,){
     var perChairWood=1;
     var perTableWood=3;//Cubic
     var perBedWood =5; //Cubic
-    var totalWood="Your Value Nagetive So Don't Need Wood";
+    var totalWood="When You Give Three Value in Parameter. I'm Calculate You Wood then Tell You How Much Need Wood ";
     if(chair<0 || table<0 ||bed<0){
         console.log("Please Enter Positive Or 0 Number")
+    }
+    else if (chair==null || table===null ||bed===null){
+        console.log("Please Enter three value")
+
     }
     else{
         totalWood=perChairWood*chair+table*perTableWood+bed*perBedWood;
@@ -39,7 +43,7 @@ function woodCalculator(chair,table,bed,){
     return totalWood;
 }
 
-var totalNeedWood=woodCalculator(5,5,5,);
+var totalNeedWood=woodCalculator(0,0,0);
 console.log("Your Total Need Wood =",totalNeedWood,"Cubic foot");
 
 //===brick Calculator ======Assignment-Problem Solving-3
@@ -58,32 +62,48 @@ It takes 1000 bricks to fit 1.
 It takes 1000 bricks to fit 1.
 */
 function brickCalculator(brick){
-    var perFloor="Don't Need ";//gloabal
+    var perFloorBrick="Don't Need ";//gloabal
     if(brick<0){
       console.log("Enter a Positive Or 0 Flooer Number. I'm Tell You How Much Brick Need")
     }
     else if(brick<=1 || brick<=10 ) {
-      perFloor=brick*15*1000;
-     
+      perFloorBrick=brick*15*1000;
  }
-    else if(brick<=11 || brick<=20){
-      perFloor=brick*12*1000;
+    else if(brick>=11 || brick<=20){
+        var firstFloorRange=150000;
+        var nthFloor=brick-10;
+        perFloorBrick=(12*1000*nthFloor)+firstFloorRange;
+
  }
     else{
-      perFloor=brick*10*1000;
+        var secoudFloorRange=270000;
+        var nthFloor=brick-20;
+        var infityFloor=10*1000;
+      perFloorBrick=(infityFloor*nthFloor)+secoudFloorRange;
  }
- return perFloor;
+ return perFloorBrick;
 }
 
-var totalNeedBrick=brickCalculator(0);
-console.log("Total Need =",totalNeedBrick,"Brick");
+var totalNeedBrick=brickCalculator(10);
+console.log("Total Floor Need =",totalNeedBrick,"Brick");
+totalNeedBrick=brickCalculator(20);
+console.log("Total Floor Need =",totalNeedBrick,"Brick");
+totalNeedBrick=brickCalculator(22);
+console.log("Total Floor Need =",totalNeedBrick,"Brick");
 
 //find min word friend name. ==== tiny Friend ==== Assignment - Problem solving -4
-/*
+
 function tinyFriend(name){
     var friendName=name;
-    var tinyFriendName=name.length.Math.min(...friendName);    
+   for(var i=0;i<name.length;i++){
+       friendName=name[i];
+    if(friendName.length<name.length){
+       var tinyFriendName=friendName;
+    }
+   }   
     return tinyFriendName;
 }
-var result=tinyFriend(["shakil","ami","ro","azad"])
-console.log(result);*/
+var tinyFriendNameResult =tinyFriend(["shakil","r","programming"]);
+console.log(tinyFriendNameResult);
+
+//Assignment problem solving done. 
