@@ -69,7 +69,7 @@ function brickCalculator(brick){
     else if(brick<=1 || brick<=10 ) {
       perFloorBrick=brick*15*1000;
  }
-    else if(brick>=11 || brick<=20){
+    else if(brick<=11 || brick<=20){
         var firstFloorRange=150000;
         var nthFloor=brick-10;
         perFloorBrick=(12*1000*nthFloor)+firstFloorRange;
@@ -88,7 +88,7 @@ var totalNeedBrick=brickCalculator(10);
 console.log("Total Floor Need =",totalNeedBrick,"Brick");
 totalNeedBrick=brickCalculator(20);
 console.log("Total Floor Need =",totalNeedBrick,"Brick");
-totalNeedBrick=brickCalculator(22);
+totalNeedBrick=brickCalculator(21);
 console.log("Total Floor Need =",totalNeedBrick,"Brick");
 
 //find min word friend name. ==== tiny Friend ==== Assignment - Problem solving -4
